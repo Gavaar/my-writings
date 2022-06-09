@@ -8,7 +8,9 @@ Also I used Markdown cuz ~~I'm lazy and didn't really have enough time for Prezi
 Nonetheless, here we go with the Awesome Explanation of stuff... by:
 
 ME
+
 ![Francisco Santorelli][sexyMe]
+
 so sit tight, cuz I'm secretly dumb😉
 
 # Small Intro
@@ -25,7 +27,6 @@ Confusing probably. But hear me out.
 # 2. Soooo we gotta use Reactive libraries.
 <div align="center"><img src="https://c.tenor.com/f0c-54Kd2TwAAAAC/but-why-ryan-reynolds.gif"></div>
 
-...
 
 - ~~Frontend developers wanted to feel relevant so they made things more complicated~~
 - Easier to reason about in comparison to promises / callback hells (C.H.)
@@ -479,9 +480,10 @@ They already are thought to be handled in a reactive way. They have observables 
 
 # Hope you enjoyed this :)!
 
-<h3 align="center">Thanks!</h3>
+<h2 align="center">Thanks!</h2>
 
-Questions, and stuff?
+If you have any questions, and stuff, be sure to [drop me a line](mailto:oxspit@gmail.com)!
+
 
 ![mepart2][sexyerMe]
 

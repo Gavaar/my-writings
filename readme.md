@@ -8,4 +8,4 @@ I basically created this repository to keep all the stuff I write in a single pl
 
 A little talk I gave for my colleagues on rxjs and Observables. I created the script for the talk in md format, so here it is.
 
-[whyILikeObservables]: ./why_I_like_observables/readme.md
+[whyILikeObservables]: ./why_I_like_observables

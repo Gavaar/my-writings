@@ -116,7 +116,7 @@ input.addEventListener('keyup', async () => {
 fromEvent(input, 'keyup').pipe(
 	switchMap(() => fetchFromService(input.value)),
 ).subscribe({
-  next: results => results = results
+    next: results => results = results
 });
 ```
 
@@ -142,7 +142,7 @@ fromEvent(input, 'keyup').pipe(
     debounceTime(500), // <- added this
 	switchMap(() => fetchFromService(input.value)),
 ).subscribe({
-  next: results => results = results
+    next: results => results = results
 });
 ```
 
@@ -398,6 +398,7 @@ They are divided by the [learn rxjs web](https://www.learnrxjs.io/learn-rxjs/ope
 
 # Best practices && Angular
 ## Avoid Callback Hell (imperative using)
+
 ```typescript
 // this is akin to callback hell. Don't do it. Use operators of *Map to avoid this.
 firstCall().subscribe(value1 => {
@@ -417,8 +418,8 @@ hotObs = (new Subject()).asObservable().pipe(
 );
 
 ngOnDestroy() {
-  this.destroy$.next(true);
-  this.destroy$.complete();
+    this.destroy$.next(true);
+    this.destroy$.complete();
 }
 ```
 
@@ -426,6 +427,7 @@ ngOnDestroy() {
 Async pipe makes life easier in Angular when thinking on streams. So going back to our example on reading user input.
 
 Our usual solution:
+
 ```html
 <input class="awesome-input"
 	placeholder="search here"
@@ -434,6 +436,7 @@ Our usual solution:
 />
 <li *ngFor="let item of data">{{ item }}</li>
 ```
+
 ```typescript
 data = [];
 inputValue = '';
@@ -444,6 +447,7 @@ onUpdateValue(value: string) {
 ```
 
 More complex, but more stream-y solution:
+
 ```html
 <input class="awesome-input"
 	placeholder="search here"
@@ -452,6 +456,7 @@ More complex, but more stream-y solution:
 />
 <li *ngFor="let item of data$ | async">{{ item }}</li>
 ```
+
 ```typescript
 inputValue$ = new BehaviorSubject('');
 data$ = this.inputValue$.pipe(
@@ -464,9 +469,11 @@ data$ = this.inputValue$.pipe(
 
 ## Avoid passing streams as inputs
 Usually, this is done so the children elements can update their values depending on what the stream is doing. But this is unnecesary with the async pipe
+
 ```html
 <my-component [my-input]="myStream$ | async"></my-component>
 ```
+
 this would update the `my-input` value each time the stream emits, but the child component doesn't have to know about any stream, or its lifetime. In this sense, all streams attempt to stay encapsulated to where they are relevant. And communication of streams downwards usually go by using the `async` pipe, and upwards by `EventEmitters`
 
 ## Harness the power of ReactiveForms

@@ -413,7 +413,7 @@ firstCall().subscribe(value1 => {
 ```typescript
 destroy$ = new AsyncSubject();
 
-hotObs = (new Subject()).asObservable().pipe(
+hotObs = (new Subject()).pipe(
 	takeUntil(this.destroy$),
 );
 
